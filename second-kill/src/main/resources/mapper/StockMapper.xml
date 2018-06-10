@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.StockMapper" >
+
+    <select id="selectById"  resultType="com.example.demo.domain.Stock">
+        SELECT * FROM stock WHERE id = #{id}
+    </select>
+
+    <update id="updateSale" parameterType="com.example.demo.domain.Stock">
+        update stock
+        <set>
+            sale = sale + 1,
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByOptimistic" parameterType="com.example.demo.domain.Stock">
+        update stock
+        <set>
+            sale = sale + 1,
+            version = version + 1
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+        and version = #{version, jdbcType=INTEGER}
+    </update>
+</mapper>
