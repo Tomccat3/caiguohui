@@ -1,0 +1,42 @@
+spring:
+  kafka:
+      bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+      consumer:
+        group-id: group-1
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: com.example.demo.util.DecodeingKafka
+  mail:
+    host: smtp.163.com
+    username: 18317153556@163.com
+    password: caiguohui123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+
+#  freemarker:
+#    template-loader-path: classpath:/static/template/
+#    enabled: true
+#    cache: false
+#    charset: UTF-8
+#    content-type: text/html
+#    allow-request-override: false
+#    check-template-location: true
+#    expose-request-attributes: false
+#    expose-session-attributes: false
+#    expose-spring-macro-helpers: false
+##thymeleaf
+#  thymeleaf:
+#    prefix: classpath:/static/template/
+#    suffix: .html
+#    mode: HTML5
+#    encoding: UTF-8
+#    content-type: text/html
+#    cache: false
