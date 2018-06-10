@@ -1,0 +1,9 @@
+spring:
+ data:
+   elasticsearch:
+    clusterName: elasticsearch
+    clusterNodes: 127.0.0.1:9301
+   mongodb:
+    host: 127.0.0.1
+    database: demo
+    port: 27137
